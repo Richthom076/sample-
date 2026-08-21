@@ -1,0 +1,3782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Richard Thomas - Computer Science student, web developer and technology enthusiast from Arusha, Tanzania.">
+
+    <meta
+        name="author"
+        content="Richard Thomas">
+
+    <title>Richard Thomas | Portfolio</title>
+
+
+    <style>
+
+        /* =====================================================
+           COASTAL MIDNIGHT COLOR PALETTE
+        ===================================================== */
+
+        :root {
+
+            --primary: #38bdf8;
+            --primary-dark: #0284c7;
+
+            --secondary: #f0f9ff;
+
+            --text: #cbd5e1;
+            --light-text: #94a3b8;
+
+            --background: #06131f;
+            --background-alt: #081c2b;
+
+            --card: #0b2233;
+            --card-light: #0e2a3d;
+
+            --border: #16445c;
+
+            --ocean: #0ea5e9;
+            --seafoam: #5eead4;
+
+            --white: #ffffff;
+
+            --shadow:
+                0 15px 45px rgba(0, 0, 0, 0.35);
+
+            --glow:
+                0 0 30px rgba(56, 189, 248, 0.18);
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: var(--background);
+
+            color: var(--text);
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+        }
+
+
+        a {
+
+            text-decoration: none;
+
+            color: inherit;
+        }
+
+
+        img {
+
+            max-width: 100%;
+
+            display: block;
+        }
+
+
+        button,
+        input,
+        textarea {
+
+            font-family: inherit;
+        }
+
+
+        button {
+
+            cursor: pointer;
+        }
+
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1200px;
+
+            margin: auto;
+        }
+
+
+        .section {
+
+            padding: 110px 0;
+        }
+
+
+        /* =====================================================
+           BACKGROUND EFFECT
+        ===================================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(14, 165, 233, 0.08),
+                    transparent 70%
+                );
+
+            top: -150px;
+            left: -150px;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 600px;
+            height: 600px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(94, 234, 212, 0.05),
+                    transparent 70%
+                );
+
+            bottom: -200px;
+            right: -200px;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+
+        /* =====================================================
+           SECTION TITLES
+        ===================================================== */
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 65px;
+        }
+
+
+        .section-title span {
+
+            color: var(--seafoam);
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            font-size: 13px;
+        }
+
+
+        .section-title h2 {
+
+            color: var(--secondary);
+
+            font-size: 42px;
+
+            margin-top: 8px;
+
+            font-weight: 800;
+        }
+
+
+        .section-title p {
+
+            max-width: 650px;
+
+            margin: 15px auto 0;
+
+            color: var(--light-text);
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background:
+                rgba(6, 19, 31, 0.88);
+
+            backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid rgba(22, 68, 92, 0.7);
+        }
+
+
+        .navbar {
+
+            height: 78px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo {
+
+            color: var(--secondary);
+
+            font-size: 25px;
+
+            font-weight: 900;
+
+            letter-spacing: -1px;
+        }
+
+
+        .logo span {
+
+            color: var(--primary);
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+
+            list-style: none;
+        }
+
+
+        .nav-links a {
+
+            color: var(--text);
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+
+            color: var(--primary);
+
+            text-shadow:
+                0 0 12px rgba(56, 189, 248, 0.5);
+        }
+
+
+        .nav-actions {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+        }
+
+
+        .theme-btn,
+        .menu-btn {
+
+            border: none;
+
+            background: transparent;
+
+            color: var(--secondary);
+
+            font-size: 21px;
+        }
+
+
+        .menu-btn {
+
+            display: none;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding-top: 80px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            right: -220px;
+            top: 100px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(14, 165, 233, 0.14),
+                    transparent 70%
+                );
+
+            border-radius: 50%;
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            left: 35%;
+            bottom: -200px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(94, 234, 212, 0.08),
+                    transparent 70%
+                );
+
+            border-radius: 50%;
+        }
+
+
+        .hero-content {
+
+            display: grid;
+
+            grid-template-columns:
+                1.2fr 0.8fr;
+
+            gap: 70px;
+
+            align-items: center;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .hero-text small {
+
+            color: var(--seafoam);
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+
+        .hero-text h1 {
+
+            color: var(--secondary);
+
+            font-size:
+                clamp(45px, 7vw, 78px);
+
+            line-height: 1.05;
+
+            margin: 15px 0;
+
+            letter-spacing: -3px;
+        }
+
+
+        .hero-text h1 span {
+
+            color: var(--primary);
+
+            text-shadow:
+                0 0 25px rgba(56, 189, 248, 0.25);
+        }
+
+
+        .hero-text h2 {
+
+            color: var(--light-text);
+
+            font-size: 25px;
+
+            margin-bottom: 20px;
+        }
+
+
+        #typing {
+
+            color: var(--primary);
+
+            font-weight: 700;
+        }
+
+
+        .hero-text p {
+
+            max-width: 680px;
+
+            color: var(--light-text);
+
+            font-size: 17px;
+
+            margin-bottom: 32px;
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .buttons {
+
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 13px 26px;
+
+            border-radius: 8px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+
+            border: none;
+        }
+
+
+        .btn-primary {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--ocean),
+                    var(--primary)
+                );
+
+            color: #02111c;
+
+            box-shadow:
+                0 8px 25px rgba(14, 165, 233, 0.22);
+        }
+
+
+        .btn-primary:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 35px rgba(14, 165, 233, 0.35);
+        }
+
+
+        .btn-outline {
+
+            border:
+                1px solid var(--primary);
+
+            color: var(--primary);
+
+            background: transparent;
+        }
+
+
+        .btn-outline:hover {
+
+            background: var(--primary);
+
+            color: #02111c;
+
+            transform: translateY(-3px);
+        }
+
+
+        .btn-small {
+
+            padding: 9px 16px;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           PROFILE
+        ===================================================== */
+
+        .hero-image {
+
+            display: flex;
+
+            justify-content: center;
+        }
+
+
+        .profile-wrapper {
+
+            position: relative;
+        }
+
+
+        .profile-circle {
+
+            width: 350px;
+
+            height: 350px;
+
+            border-radius: 50%;
+
+            padding: 7px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--seafoam),
+                    var(--ocean)
+                );
+
+            box-shadow:
+                0 0 70px rgba(14, 165, 233, 0.22);
+
+            animation:
+                floating 5s ease-in-out infinite;
+        }
+
+
+        .profile-inner {
+
+            width: 100%;
+
+            height: 100%;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at 30% 20%,
+                    #123d54,
+                    #06131f 70%
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 100px;
+
+            color: var(--primary);
+
+            font-weight: 900;
+
+            border:
+                2px solid rgba(56, 189, 248, 0.15);
+        }
+
+
+        .profile-ring {
+
+            position: absolute;
+
+            width: 385px;
+
+            height: 385px;
+
+            border-radius: 50%;
+
+            border:
+                1px dashed rgba(94, 234, 212, 0.35);
+
+            top: -17px;
+
+            left: -17px;
+
+            animation:
+                spin 20s linear infinite;
+        }
+
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+
+        @keyframes spin {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--background-alt),
+                    var(--background)
+                );
+        }
+
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 65px;
+
+            align-items: center;
+        }
+
+
+        .about-text h3 {
+
+            color: var(--secondary);
+
+            font-size: 32px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .about-text p {
+
+            color: var(--light-text);
+
+            margin-bottom: 18px;
+        }
+
+
+        .info-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+
+        .info-item {
+
+            padding: 20px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 12px;
+
+            background:
+                rgba(11, 34, 51, 0.65);
+
+            transition: 0.3s;
+        }
+
+
+        .info-item:hover {
+
+            border-color: var(--primary);
+
+            transform: translateY(-3px);
+
+            box-shadow: var(--glow);
+        }
+
+
+        .info-item strong {
+
+            display: block;
+
+            color: var(--secondary);
+
+            margin-bottom: 4px;
+        }
+
+
+        .info-item span {
+
+            color: var(--light-text);
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 22px;
+        }
+
+
+        .skill-card {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--card),
+                    var(--card-light)
+                );
+
+            border:
+                1px solid var(--border);
+
+            padding: 26px;
+
+            border-radius: 14px;
+
+            box-shadow: var(--shadow);
+
+            transition: 0.3s;
+        }
+
+
+        .skill-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(56, 189, 248, 0.5);
+        }
+
+
+        .skill-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 13px;
+
+            color: var(--secondary);
+
+            font-weight: 700;
+        }
+
+
+        .skill-header span:last-child {
+
+            color: var(--primary);
+        }
+
+
+        .progress {
+
+            height: 8px;
+
+            background: #123244;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+
+        .progress-bar {
+
+            height: 100%;
+
+            width: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--ocean),
+                    var(--seafoam)
+                );
+
+            border-radius: 20px;
+
+            transition:
+                width 1.5s ease;
+
+            box-shadow:
+                0 0 12px rgba(56, 189, 248, 0.35);
+        }
+
+
+        /* =====================================================
+           SERVICES
+        ===================================================== */
+
+        .services {
+
+            background:
+                var(--background-alt);
+        }
+
+
+        .services-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .service-card {
+
+            padding: 38px 26px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0b2233,
+                    #081c2b
+                );
+
+            transition: 0.35s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .service-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--primary),
+                    transparent
+                );
+
+            transform:
+                translateX(-100%);
+
+            transition: 0.5s;
+        }
+
+
+        .service-card:hover::before {
+
+            transform:
+                translateX(100%);
+        }
+
+
+        .service-card:hover {
+
+            transform: translateY(-9px);
+
+            border-color: var(--primary);
+
+            box-shadow: var(--glow);
+        }
+
+
+        .service-icon {
+
+            width: 70px;
+
+            height: 70px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 16px;
+
+            background:
+                rgba(14, 165, 233, 0.1);
+
+            border:
+                1px solid rgba(56, 189, 248, 0.2);
+
+            font-size: 35px;
+        }
+
+
+        .service-card h3 {
+
+            color: var(--secondary);
+
+            margin-bottom: 12px;
+        }
+
+
+        .service-card p {
+
+            color: var(--light-text);
+
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .projects-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .project-card {
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
+
+            transition: 0.35s;
+        }
+
+
+        .project-card:hover {
+
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(56, 189, 248, 0.5);
+        }
+
+
+        .project-image {
+
+            height: 200px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b3147,
+                    #075985,
+                    #0f3b4f
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: var(--primary);
+
+            font-size: 55px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .project-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.4s;
+        }
+
+
+        .project-card:hover
+        .project-image img {
+
+            transform: scale(1.06);
+        }
+
+
+        .project-placeholder {
+
+            font-size: 55px;
+        }
+
+
+        .project-content {
+
+            padding: 27px;
+        }
+
+
+        .project-content h3 {
+
+            color: var(--secondary);
+
+            margin-bottom: 10px;
+
+            font-size: 20px;
+        }
+
+
+        .project-content p {
+
+            color: var(--light-text);
+
+            margin-bottom: 18px;
+
+            font-size: 15px;
+        }
+
+
+        .project-buttons {
+
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .project-link {
+
+            color: var(--primary);
+
+            font-weight: 700;
+        }
+
+
+        .project-link:hover {
+
+            color: var(--seafoam);
+        }
+
+
+        /* =====================================================
+           PROJECT TAGS
+        ===================================================== */
+
+        .project-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .project-tags span {
+
+            background:
+                rgba(56, 189, 248, 0.08);
+
+            color: var(--seafoam);
+
+            border:
+                1px solid rgba(56, 189, 248, 0.15);
+
+            padding: 4px 9px;
+
+            border-radius: 20px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           EDUCATION
+        ===================================================== */
+
+        .education-section {
+
+            background:
+                var(--background-alt);
+        }
+
+
+        .timeline {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            border-left:
+                2px solid var(--primary);
+
+            padding-left: 32px;
+        }
+
+
+        .timeline-item {
+
+            position: relative;
+
+            margin-bottom: 35px;
+
+            background:
+                var(--card);
+
+            padding: 27px;
+
+            border-radius: 13px;
+
+            border:
+                1px solid var(--border);
+
+            transition: 0.3s;
+        }
+
+
+        .timeline-item:hover {
+
+            border-color: var(--primary);
+
+            transform: translateX(5px);
+        }
+
+
+        .timeline-item::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 15px;
+
+            height: 15px;
+
+            background: var(--primary);
+
+            border-radius: 50%;
+
+            left: -41px;
+
+            top: 30px;
+
+            box-shadow:
+                0 0 15px rgba(56, 189, 248, 0.7);
+        }
+
+
+        .timeline-item span {
+
+            color: var(--seafoam);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+
+        .timeline-item h3 {
+
+            color: var(--secondary);
+
+            margin: 8px 0;
+        }
+
+
+        .timeline-item p {
+
+            color: var(--light-text);
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--background),
+                    var(--background-alt)
+                );
+        }
+
+
+        .contact-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                0.8fr 1.2fr;
+
+            gap: 55px;
+        }
+
+
+        .contact-info h3 {
+
+            color: var(--secondary);
+
+            font-size: 31px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .contact-info > p {
+
+            color: var(--light-text);
+
+            margin-bottom: 28px;
+        }
+
+
+        .contact-item {
+
+            display: flex;
+
+            gap: 15px;
+
+            align-items: center;
+
+            margin-bottom: 21px;
+        }
+
+
+        .contact-icon {
+
+            width: 47px;
+
+            height: 47px;
+
+            flex-shrink: 0;
+
+            background:
+                rgba(14, 165, 233, 0.1);
+
+            color: var(--primary);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 11px;
+
+            border:
+                1px solid rgba(56, 189, 248, 0.15);
+
+            font-size: 20px;
+        }
+
+
+        .contact-item strong {
+
+            display: block;
+
+            color: var(--secondary);
+        }
+
+
+        .contact-item span {
+
+            color: var(--light-text);
+
+            font-size: 14px;
+        }
+
+
+        .contact-item a {
+
+            color: var(--light-text);
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        .contact-item a:hover {
+
+            color: var(--primary);
+        }
+
+
+        form {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--card),
+                    var(--card-light)
+                );
+
+            padding: 32px;
+
+            border-radius: 15px;
+
+            border:
+                1px solid var(--border);
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .form-group {
+
+            margin-bottom: 18px;
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: var(--secondary);
+
+            font-weight: 700;
+        }
+
+
+        input,
+        textarea {
+
+            width: 100%;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                #071a28;
+
+            color: var(--text);
+
+            padding: 14px 15px;
+
+            border-radius: 8px;
+
+            outline: none;
+        }
+
+
+        input:focus,
+        textarea:focus {
+
+            border-color: var(--primary);
+
+            box-shadow:
+                0 0 0 3px rgba(56, 189, 248, 0.08);
+        }
+
+
+        textarea {
+
+            min-height: 150px;
+
+            resize: vertical;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            background:
+                #030d15;
+
+            color: #94a3b8;
+
+            padding: 42px 0;
+
+            text-align: center;
+
+            border-top:
+                1px solid var(--border);
+        }
+
+
+        footer p {
+
+            margin-bottom: 18px;
+        }
+
+
+        .socials {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 13px;
+        }
+
+
+        .socials a {
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border:
+                1px solid #16445c;
+
+            border-radius: 50%;
+
+            color: var(--text);
+
+            transition: 0.3s;
+        }
+
+
+        .socials a:hover {
+
+            background: var(--primary);
+
+            border-color: var(--primary);
+
+            color: #02111c;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 0 20px rgba(56, 189, 248, 0.3);
+        }
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+
+        .reveal.active {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =====================================================
+           SCROLLBAR
+        ===================================================== */
+
+        ::-webkit-scrollbar {
+
+            width: 9px;
+        }
+
+
+        ::-webkit-scrollbar-track {
+
+            background: #06131f;
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+
+            background:
+                linear-gradient(
+                    var(--ocean),
+                    var(--seafoam)
+                );
+
+            border-radius: 20px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .hero-content,
+            .about-grid,
+            .contact-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .hero-text {
+
+                text-align: center;
+            }
+
+
+            .hero-text p {
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+
+            .buttons {
+
+                justify-content: center;
+            }
+
+
+            .hero-image {
+
+                order: -1;
+            }
+
+
+            .services-grid,
+            .projects-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 750px) {
+
+            .nav-links {
+
+                position: absolute;
+
+                top: 78px;
+
+                left: 0;
+
+                width: 100%;
+
+                background:
+                    rgba(6, 19, 31, 0.98);
+
+                backdrop-filter: blur(20px);
+
+                flex-direction: column;
+
+                padding: 28px;
+
+                gap: 20px;
+
+                display: none;
+
+                border-bottom:
+                    1px solid var(--border);
+            }
+
+
+            .nav-links.active {
+
+                display: flex;
+            }
+
+
+            .menu-btn {
+
+                display: block;
+            }
+
+
+            .services-grid,
+            .projects-grid,
+            .skills-grid,
+            .info-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .section {
+
+                padding: 80px 0;
+            }
+
+
+            .section-title h2 {
+
+                font-size: 34px;
+            }
+
+
+            .profile-circle {
+
+                width: 260px;
+
+                height: 260px;
+            }
+
+
+            .profile-inner {
+
+                font-size: 75px;
+            }
+
+
+            .profile-ring {
+
+                width: 290px;
+
+                height: 290px;
+
+                top: -15px;
+
+                left: -15px;
+            }
+
+
+            .hero-text h1 {
+
+                letter-spacing: -2px;
+            }
+        }
+
+
+        @media (max-width: 450px) {
+
+            .container {
+
+                width: 92%;
+            }
+
+
+            .hero-text h1 {
+
+                font-size: 45px;
+            }
+
+
+            .hero-text h2 {
+
+                font-size: 20px;
+            }
+
+
+            .profile-circle {
+
+                width: 220px;
+
+                height: 220px;
+            }
+
+
+            .profile-inner {
+
+                font-size: 60px;
+            }
+
+
+            .profile-ring {
+
+                width: 245px;
+
+                height: 245px;
+
+                top: -12px;
+
+                left: -12px;
+            }
+
+
+            form {
+
+                padding: 22px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <a
+                href="#home"
+                class="logo">
+
+                Richard<span>.</span>
+
+            </a>
+
+
+            <ul
+                class="nav-links"
+                id="navLinks">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#services">Services</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+
+            <div class="nav-actions">
+
+                <button
+                    class="theme-btn"
+                    id="themeBtn"
+                    title="Toggle theme"
+                    aria-label="Toggle theme">
+
+                    🌊
+
+                </button>
+
+
+                <button
+                    class="menu-btn"
+                    id="menuBtn"
+                    aria-label="Open navigation menu">
+
+                    ☰
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section
+        class="hero"
+        id="home">
+
+        <div class="container hero-content">
+
+
+            <div class="hero-text reveal">
+
+                <small>
+                    Hello, I'm
+                </small>
+
+
+                <h1>
+                    Richard
+                    <span>Thomas</span>
+                </h1>
+
+
+                <h2>
+                    I'm a
+                    <span id="typing"></span>
+                </h2>
+
+
+                <p>
+
+                    I’m a Computer Science student and aspiring
+                    software developer passionate about creating
+                    modern, practical and user-friendly digital
+                    solutions.
+
+                    My interests include web development,
+                    software development, graphic design,
+                    database management, computer networking,
+                    cybersecurity, UI/UX design and emerging
+                    technologies.
+
+                    I enjoy combining creativity with technical
+                    problem-solving to transform ideas into
+                    functional digital experiences.
+
+                </p>
+
+
+                <div class="buttons">
+
+                    <a
+                        href="#projects"
+                        class="btn btn-primary">
+
+                        View My Work
+
+                    </a>
+
+
+                    <a
+                        href="#contact"
+                        class="btn btn-outline">
+
+                        Contact Me
+
+                    </a>
+
+
+                    <!--
+                        Put your CV file in the same folder
+                        and name it "Richard-Thomas-CV.pdf"
+                    -->
+
+                    <a
+                        href="Richard-Thomas-CV.pdf"
+                        class="btn btn-outline"
+                        download>
+
+                        Download CV
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="hero-image reveal">
+
+                <div class="profile-wrapper">
+
+                    <div class="profile-ring"></div>
+
+                    <div class="profile-circle">
+
+                        <div class="profile-inner">
+
+                            RT
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ABOUT
+    ===================================================== -->
+
+    <section
+        class="section about"
+        id="about">
+
+        <div class="container">
+
+
+            <div class="section-title reveal">
+
+                <span>
+                    About Me
+                </span>
+
+                <h2>
+                    Who I Am
+                </h2>
+
+                <p>
+                    A little information about me and my professional journey.
+                </p>
+
+            </div>
+
+
+
+            <div class="about-grid">
+
+
+                <div class="about-text reveal">
+
+                    <h3>
+                        Building Ideas Into Digital Experiences
+                    </h3>
+
+
+                    <p>
+
+                        I am a Computer Science student at the
+                        Institute of Accountancy Arusha with a
+                        strong interest in technology, web
+                        development, business and digital
+                        innovation.
+
+                    </p>
+
+
+                    <p>
+
+                        I enjoy learning new technologies and
+                        using my skills to create useful,
+                        attractive and user-friendly websites
+                        and digital solutions.
+
+                    </p>
+
+
+                    <p>
+
+                        My goal is to continue developing my
+                        technical and professional skills while
+                        creating solutions that solve
+                        real-world problems.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="info-grid reveal">
+
+
+                    <div class="info-item">
+
+                        <strong>
+                            Name
+                        </strong>
+
+                        <span>
+                            Richard Thomas
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <strong>
+                            Profession
+                        </strong>
+
+                        <span>
+                            Computer Science Student
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <strong>
+                            Institution
+                        </strong>
+
+                        <span>
+                            Institute of Accountancy Arusha
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <strong>
+                            Location
+                        </strong>
+
+                        <span>
+                            Arusha, Tanzania
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <strong>
+                            Interests
+                        </strong>
+
+                        <span>
+                            Technology & Business
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <strong>
+                            Availability
+                        </strong>
+
+                        <span>
+                            Open to Opportunities
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SKILLS
+    ===================================================== -->
+
+    <section
+        class="section"
+        id="skills">
+
+        <div class="container">
+
+
+            <div class="section-title reveal">
+
+                <span>
+                    My Skills
+                </span>
+
+                <h2>
+                    Technical Skills
+                </h2>
+
+                <p>
+                    Technologies and abilities I use to create digital solutions.
+                </p>
+
+            </div>
+
+
+
+            <div class="skills-grid">
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-header">
+
+                        <span>
+                            HTML
+                        </span>
+
+                        <span>
+                            90%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            data-width="90%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-header">
+
+                        <span>
+                            CSS
+                        </span>
+
+                        <span>
+                            85%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            data-width="85%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-header">
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                        <span>
+                            75%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            data-width="75%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-header">
+
+                        <span>
+                            Microsoft Office
+                        </span>
+
+                        <span>
+                            85%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            data-width="85%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-header">
+
+                        <span>
+                            Computer Networking
+                        </span>
+
+                        <span>
+                            70%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            data-width="70%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-header">
+
+                        <span>
+                            Business & Entrepreneurship
+                        </span>
+
+                        <span>
+                            80%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            data-width="80%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SERVICES
+    ===================================================== -->
+
+    <section
+        class="section services"
+        id="services">
+
+        <div class="container">
+
+
+            <div class="section-title reveal">
+
+                <span>
+                    What I Do
+                </span>
+
+                <h2>
+                    My Services
+                </h2>
+
+                <p>
+                    Some of the digital services and solutions I can provide.
+                </p>
+
+            </div>
+
+
+
+            <div class="services-grid">
+
+
+                <div class="service-card reveal">
+
+                    <div class="service-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Web Development
+                    </h3>
+
+                    <p>
+                        Creating responsive and modern websites
+                        using HTML, CSS and JavaScript.
+                    </p>
+
+                </div>
+
+
+
+                <div class="service-card reveal">
+
+                    <div class="service-icon">
+                        🎨
+                    </div>
+
+                    <h3>
+                        Web Design
+                    </h3>
+
+                    <p>
+                        Designing clean, professional and
+                        user-friendly interfaces for websites.
+                    </p>
+
+                </div>
+
+
+
+                <div class="service-card reveal">
+
+                    <div class="service-icon">
+                        🖥️
+                    </div>
+
+                    <h3>
+                        ICT Solutions
+                    </h3>
+
+                    <p>
+                        Providing basic technology, computer
+                        and information technology solutions.
+                    </p>
+
+                </div>
+
+
+
+                <div class="service-card reveal">
+
+                    <div class="service-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Business Solutions
+                    </h3>
+
+                    <p>
+                        Developing digital ideas and solutions
+                        that can support small businesses and
+                        entrepreneurs.
+                    </p>
+
+                </div>
+
+
+
+                <div class="service-card reveal">
+
+                    <div class="service-icon">
+                        📱
+                    </div>
+
+                    <h3>
+                        Responsive Design
+                    </h3>
+
+                    <p>
+                        Creating websites that work properly
+                        on phones, tablets and computers.
+                    </p>
+
+                </div>
+
+
+
+                <div class="service-card reveal">
+
+                    <div class="service-icon">
+                        🚀
+                    </div>
+
+                    <h3>
+                        Digital Projects
+                    </h3>
+
+                    <p>
+                        Turning creative ideas into practical
+                        digital projects and applications.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROJECTS
+    ===================================================== -->
+
+    <section
+        class="section"
+        id="projects">
+
+        <div class="container">
+
+
+            <div class="section-title reveal">
+
+                <span>
+                    Portfolio
+                </span>
+
+                <h2>
+                    My Projects
+                </h2>
+
+                <p>
+                    A selection of projects and digital ideas I have worked on.
+                </p>
+
+            </div>
+
+
+
+            <div class="projects-grid">
+
+
+                <!-- PROJECT 1 -->
+
+                <div class="project-card reveal">
+
+                    <div class="project-image">
+
+                        <!--
+                            Replace this emoji with:
+                            <img src="images/portfolio.png"
+                            alt="Personal portfolio website">
+                        -->
+
+                        <div class="project-placeholder">
+                            🌐
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <h3>
+                            Personal Portfolio
+                        </h3>
+
+
+                        <div class="project-tags">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+
+                        </div>
+
+
+                        <p>
+                            A modern responsive portfolio website
+                            designed to showcase my skills,
+                            projects and professional information.
+                        </p>
+
+
+                        <div class="project-buttons">
+
+                            <!-- Replace # with your actual live URL -->
+
+                            <a
+                                href="#"
+                                class="btn btn-primary btn-small"
+                                target="_blank"
+                                rel="noopener">
+
+                                Live Demo
+
+                            </a>
+
+
+                            <!-- Replace # with your GitHub repository -->
+
+                            <a
+                                href="https://github.com/Richthom076"
+                                class="btn btn-outline btn-small"
+                                target="_blank"
+                                rel="noopener">
+
+                                GitHub
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 2 -->
+
+                <div class="project-card reveal">
+
+                    <div class="project-image">
+
+                        <div class="project-placeholder">
+                            🏫
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <h3>
+                            Campus Map System
+                        </h3>
+
+
+                        <div class="project-tags">
+
+                            <span>JavaScript</span>
+                            <span>Maps</span>
+                            <span>UI/UX</span>
+
+                        </div>
+
+
+                        <p>
+                            An interactive campus map concept
+                            that helps users identify buildings
+                            and access information about different
+                            facilities.
+                        </p>
+
+
+                        <div class="project-buttons">
+
+                            <a
+                                href="#"
+                                class="btn btn-primary btn-small"
+                                target="_blank"
+                                rel="noopener">
+
+                                Live Demo
+
+                            </a>
+
+
+                            <a
+                                href="https://github.com/Richthom076"
+                                class="btn btn-outline btn-small"
+                                target="_blank"
+                                rel="noopener">
+
+                                GitHub
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 3 -->
+
+                <div class="project-card reveal">
+
+                    <div class="project-image">
+
+                        <div class="project-placeholder">
+                            🏢
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <h3>
+                            Business Website
+                        </h3>
+
+
+                        <div class="project-tags">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Responsive</span>
+
+                        </div>
+
+
+                        <p>
+                            A professional website concept
+                            designed for promoting products,
+                            services and business information
+                            online.
+                        </p>
+
+
+                        <div class="project-buttons">
+
+                            <a
+                                href="#"
+                                class="btn btn-primary btn-small"
+                                target="_blank"
+                                rel="noopener">
+
+                                Live Demo
+
+                            </a>
+
+
+                            <a
+                                href="https://github.com/Richthom076"
+                                class="btn btn-outline btn-small"
+                                target="_blank"
+                                rel="noopener">
+
+                                GitHub
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 4 -->
+
+                <div class="project-card reveal">
+
+                    <div class="project-image">
+
+                        <div class="project-placeholder">
+                            ❤️
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <h3>
+                            Interactive Web Experience
+                        </h3>
+
+
+                        <div class="project-tags">
+
+                            <span>JavaScript</span>
+                            <span>Animation</span>
+                            <span>HTML</span>
+
+                        </div>
+
+
+                        <p>
+                            A creative JavaScript project
+                            demonstrating interactive buttons,
+                            animations and dynamic user
+                            experiences.
+                        </p>
+
+
+                        <div class="project-buttons">
+
+                            <a
+                                href="#"
+                                class="btn btn-primary btn-small"
+                                target="_blank"
+                                rel="noopener">
+
+                                Live Demo
+
+                            </a>
+
+
+                            <a
+                                href="https://github.com/Richthom076"
+                                class="btn btn-outline btn-small"
+                                target="_blank"
+                                rel="noopener">
+
+                                GitHub
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 5 -->
+
+                <div class="project-card reveal">
+
+                    <div class="project-image">
+
+                        <div class="project-placeholder">
+                            📚
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <h3>
+                            Digital Learning Platform
+                        </h3>
+
+
+                        <div class="project-tags">
+
+                            <span>Education</span>
+                            <span>Web</span>
+                            <span>UI/UX</span>
+
+                        </div>
+
+
+                        <p>
+                            A concept for helping students access
+                            educational information and digital
+                            learning resources.
+                        </p>
+
+
+                        <div class="project-buttons">
+
+                            <a
+                                href="#"
+                                class="btn btn-primary btn-small"
+                                target="_blank"
+                                rel="noopener">
+
+                                Live Demo
+
+                            </a>
+
+
+                            <a
+                                href="https://github.com/Richthom076"
+                                class="btn btn-outline btn-small"
+                                target="_blank"
+                                rel="noopener">
+
+                                GitHub
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 6 -->
+
+                <div class="project-card reveal">
+
+                    <div class="project-image">
+
+                        <div class="project-placeholder">
+                            🛒
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <h3>
+                            Small Business Platform
+                        </h3>
+
+
+                        <div class="project-tags">
+
+                            <span>Business</span>
+                            <span>Web</span>
+                            <span>JavaScript</span>
+
+                        </div>
+
+
+                        <p>
+                            A simple digital platform concept
+                            for presenting products and services
+                            to customers online.
+                        </p>
+
+
+                        <div class="project-buttons">
+
+                            <a
+                                href="#"
+                                class="btn btn-primary btn-small"
+                                target="_blank"
+                                rel="noopener">
+
+                                Live Demo
+
+                            </a>
+
+
+                            <a
+                                href="https://github.com/Richthom076"
+                                class="btn btn-outline btn-small"
+                                target="_blank"
+                                rel="noopener">
+
+                                GitHub
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EDUCATION
+    ===================================================== -->
+
+    <section
+        class="section education-section"
+        id="education">
+
+        <div class="container">
+
+
+            <div class="section-title reveal">
+
+                <span>
+                    My Journey
+                </span>
+
+                <h2>
+                    Education
+                </h2>
+
+                <p>
+                    My academic and professional development.
+                </p>
+
+            </div>
+
+
+
+            <div class="timeline">
+
+
+                <div class="timeline-item reveal">
+
+                    <span>
+                        Current
+                    </span>
+
+                    <h3>
+                        Institute of Accountancy Arusha
+                    </h3>
+
+                    <p>
+                        Computer Science studies with interests
+                        in software development, information
+                        technology, computer systems, business
+                        and digital skills.
+                    </p>
+
+                </div>
+
+
+
+                <div class="timeline-item reveal">
+
+                    <span>
+                        Professional Development
+                    </span>
+
+                    <h3>
+                        Web Development
+                    </h3>
+
+                    <p>
+                        Developing practical skills in HTML,
+                        CSS, JavaScript, responsive design
+                        and modern website development.
+                    </p>
+
+                </div>
+
+
+
+                <div class="timeline-item reveal">
+
+                    <span>
+                        Continuous Learning
+                    </span>
+
+                    <h3>
+                        Technology & Business
+                    </h3>
+
+                    <p>
+                        Continuously learning about ICT,
+                        entrepreneurship, computer systems
+                        and digital business solutions.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT
+    ===================================================== -->
+
+    <section
+        class="section contact"
+        id="contact">
+
+        <div class="container">
+
+
+            <div class="section-title reveal">
+
+                <span>
+                    Get In Touch
+                </span>
+
+                <h2>
+                    Contact Me
+                </h2>
+
+                <p>
+                    Have a project or opportunity? Let's talk.
+                </p>
+
+            </div>
+
+
+
+            <div class="contact-grid">
+
+
+                <div class="contact-info reveal">
+
+                    <h3>
+                        Let's Work Together
+                    </h3>
+
+
+                    <p>
+
+                        If you have a project, business idea,
+                        internship opportunity or collaboration,
+                        feel free to contact me.
+
+                    </p>
+
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📧
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Email
+                            </strong>
+
+                            <a
+                                href="mailto:rt3410701@gmail.com">
+
+                                rt3410701@gmail.com
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📱
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Phone
+                            </strong>
+
+                            <a
+                                href="tel:+255762130687">
+
+                                +255 762 130 687
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📍
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Location
+                            </strong>
+
+                            <span>
+                                Arusha, Tanzania
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!--
+                    This form opens the visitor's email application.
+                    It does not require a backend server.
+                -->
+
+                <form
+                    id="contactForm"
+                    class="reveal">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Your Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Your Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            placeholder="Write your message..."
+                            required></textarea>
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+
+                        Send Message
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+
+                ©
+                <span id="year"></span>
+                Richard Thomas.
+                All Rights Reserved.
+
+            </p>
+
+
+            <div class="socials">
+
+
+                <a
+                    href="https://www.facebook.com/share/19SRAShiyK/"
+                    aria-label="Facebook"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    f
+
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/ril_trexy?igsh=MWR6aHczdHJyd2E3Mw=="
+                    aria-label="Instagram"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    ◎
+
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/richard-thomas-94b5143a7"
+                    aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    in
+
+                </a>
+
+
+                <a
+                    href="https://github.com/Richthom076"
+                    aria-label="GitHub"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    ◉
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuBtn.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active");
+
+        });
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navLinks.classList.remove("active");
+
+                });
+
+            });
+
+
+
+        /* =====================================================
+           THEME BUTTON
+        ===================================================== */
+
+        const themeBtn =
+            document.getElementById("themeBtn");
+
+
+        let oceanMode =
+            localStorage.getItem("portfolioTheme");
+
+
+        if (oceanMode === "ocean") {
+
+            themeBtn.textContent = "🌙";
+
+        } else {
+
+            themeBtn.textContent = "🌊";
+
+        }
+
+
+        themeBtn.addEventListener("click", () => {
+
+            /*
+                The portfolio already uses the Coastal Midnight
+                theme, so the button now simply changes its icon
+                and stores the visitor's preference.
+            */
+
+            if (
+                localStorage.getItem("portfolioTheme")
+                === "ocean"
+            ) {
+
+                localStorage.setItem(
+                    "portfolioTheme",
+                    "midnight"
+                );
+
+                themeBtn.textContent = "🌊";
+
+            } else {
+
+                localStorage.setItem(
+                    "portfolioTheme",
+                    "ocean"
+                );
+
+                themeBtn.textContent = "🌙";
+
+            }
+
+        });
+
+
+
+        /* =====================================================
+           TYPING EFFECT
+        ===================================================== */
+
+        const typingElement =
+            document.getElementById("typing");
+
+
+        const words = [
+
+            "Web Developer",
+
+            "Computer Science Student",
+
+            "Technology Enthusiast",
+
+            "Creative Problem Solver",
+
+            "Entrepreneur"
+
+        ];
+
+
+        let wordIndex = 0;
+
+        let charIndex = 0;
+
+        let deleting = false;
+
+
+        function typeEffect() {
+
+            const currentWord =
+                words[wordIndex];
+
+
+            if (!deleting) {
+
+                typingElement.textContent =
+                    currentWord.substring(
+                        0,
+                        charIndex + 1
+                    );
+
+                charIndex++;
+
+
+                if (
+                    charIndex ===
+                    currentWord.length
+                ) {
+
+                    deleting = true;
+
+                    setTimeout(
+                        typeEffect,
+                        1500
+                    );
+
+                    return;
+
+                }
+
+            } else {
+
+                typingElement.textContent =
+                    currentWord.substring(
+                        0,
+                        charIndex - 1
+                    );
+
+                charIndex--;
+
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+
+                    wordIndex++;
+
+
+                    if (
+                        wordIndex >=
+                        words.length
+                    ) {
+
+                        wordIndex = 0;
+
+                    }
+
+                }
+
+            }
+
+
+            setTimeout(
+                typeEffect,
+                deleting ? 60 : 100
+            );
+
+        }
+
+
+        typeEffect();
+
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        function revealOnScroll() {
+
+            const windowHeight =
+                window.innerHeight;
+
+
+            revealElements.forEach(
+                element => {
+
+                    const elementTop =
+                        element
+                            .getBoundingClientRect()
+                            .top;
+
+
+                    if (
+                        elementTop <
+                        windowHeight - 80
+                    ) {
+
+                        element.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            revealOnScroll
+        );
+
+
+        revealOnScroll();
+
+
+
+        /* =====================================================
+           SKILL PROGRESS BARS
+        ===================================================== */
+
+        const progressBars =
+            document.querySelectorAll(
+                ".progress-bar"
+            );
+
+
+        function animateSkills() {
+
+            progressBars.forEach(bar => {
+
+                const top =
+                    bar
+                        .getBoundingClientRect()
+                        .top;
+
+
+                if (
+                    top <
+                    window.innerHeight - 50
+                ) {
+
+                    bar.style.width =
+                        bar.getAttribute(
+                            "data-width"
+                        );
+
+                }
+
+            });
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            animateSkills
+        );
+
+
+        animateSkills();
+
+
+
+        /* =====================================================
+           CONTACT FORM
+        ===================================================== */
+
+        const contactForm =
+            document.getElementById(
+                "contactForm"
+            );
+
+
+        contactForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById(
+                        "name"
+                    ).value;
+
+
+                const email =
+                    document.getElementById(
+                        "email"
+                    ).value;
+
+
+                const message =
+                    document.getElementById(
+                        "message"
+                    ).value;
+
+
+                const subject =
+                    encodeURIComponent(
+                        "Portfolio Contact from " +
+                        name
+                    );
+
+
+                const body =
+                    encodeURIComponent(
+
+                        "Name: " +
+                        name +
+
+                        "\nEmail: " +
+                        email +
+
+                        "\n\nMessage:\n" +
+                        message
+
+                    );
+
+
+                window.location.href =
+                    "mailto:rt3410701@gmail.com" +
+                    "?subject=" +
+                    subject +
+                    "&body=" +
+                    body;
+
+
+                contactForm.reset();
+
+            }
+        );
+
+
+
+        /* =====================================================
+           CURRENT YEAR
+        ===================================================== */
+
+        document.getElementById(
+            "year"
+        ).textContent =
+            new Date().getFullYear();
+
+
+    </script>
+
+
+</body>
+
+</html>
